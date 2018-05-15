@@ -7,13 +7,15 @@
 </div>
 
 <h1>Blog Posts</h1>
-<div *ngIf="undefined === restItems">Loading...</div>
-<div *ngIf="undefined !== restItems">
+<div *ngIf="undefined === mascotaList">Loading...</div>
+<div *ngIf="undefined !== mascotaList">
   <ul>
-    <li *ngFor="let post of restItems" [innerHTML]="post.nombre"
-      (click)="selectedContent='<h1>' + post.nombre + '</h1>' + post.cargo">
+    <li *ngFor="let mascota of mascotaList" [innerHTML]="mascota.nombre"
+      (click)="selectedContent='<h1>' + mascota.propietario + '</h1>' + mascota.raza">
     </li>
   </ul>
 </div>
+<div *ngIf="undefined === mascota">Loading...</div>
+<div *ngIf="undefined !== mascota" [innerHTML]="mascota[0].nombre"></div>
 <div [innerHTML]="selectedContent"></div>
-
+<mascota mascotaList="mascotaList"></mascota>
